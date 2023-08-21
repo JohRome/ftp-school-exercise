@@ -1,7 +1,6 @@
 package main;
 
 import org.apache.commons.net.ftp.FTPClient;
-
 public class Main {
     public static void main(String[] args)  {
 
