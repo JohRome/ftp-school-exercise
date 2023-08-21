@@ -2,11 +2,13 @@ package main.ftp;
 
 import main.output.Output;
 import org.apache.commons.net.ftp.FTPClient;
+import org.apache.commons.net.ftp.FTPFile;
+
 import java.io.*;
 public class FTPHandler {
     private final String hostName = "127.0.0.1";
     private final String userName = "";
-    private final String userPassword = "!";
+    private final String userPassword = "";
     private final String workingDirectory = "/upload/";
     private FTPClient ftpClient;
 
@@ -56,6 +58,19 @@ public class FTPHandler {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void readFilesFromFTPServer() {
+        connectToFTPServer();
+        FTPFile[] files;
+        try {
+            files = ftpClient.listFiles();
+            Output.printFilesToRead(files);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
     private void closeConnection() throws IOException {
         try {

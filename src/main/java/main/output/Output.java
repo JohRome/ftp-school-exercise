@@ -1,5 +1,7 @@
 package main.output;
 
+import org.apache.commons.net.ftp.FTPFile;
+
 public class Output {
 
 
@@ -22,12 +24,18 @@ public class Output {
         System.out.println("""
                 Type the exact name of the file you want to read
                 Example: "myFile.txt"
-                File to read->\t
                 """);
     }
 
     /**Output for the FTPHandler class*/
     public static void printFileToRead(String output) {
-        System.out.println(output);
+        System.out.println("File content: " + output + "\n");
+    }
+    public static void printFilesToRead(FTPFile[] files) {
+        System.out.println("List of all files");
+        for (int i = 0; i < files.length; i++) {
+            System.out.println((i + 1) + ") " + files[i].getName());
+        }
+        System.out.println("_______________________________________");
     }
 }
