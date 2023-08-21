@@ -10,8 +10,18 @@ public class UserInput {
     }
 
     public int getUserIntInput() {
-        int userInput = input.nextInt();
-        input.nextLine();
+        int userInput = 0;
+
+        while (true) {
+            try {
+                userInput = Integer.parseInt(input.nextLine());
+                break; // Exit the loop if parsing is successful
+            } catch (NumberFormatException e) {
+                // Handle invalid input here, e.g., print an error message
+                System.out.print("Invalid input. Please enter an integer: ");
+            }
+        }
+
         return userInput;
     }
     public String getUserStringInput() {

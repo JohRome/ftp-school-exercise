@@ -17,7 +17,6 @@ public class Output {
         System.out.println("""
                 Type the exact name of the file you want to add
                 Example: "myFile.txt"
-                File to add->\t
                 """);
     }
     public static void askUserWichFileToRead() {
@@ -29,7 +28,7 @@ public class Output {
 
     /**Output for the FTPHandler class*/
     public static void printFileToRead(String output) {
-        System.out.println("File content: " + output + "\n");
+        System.out.println(output);
     }
     public static void printFilesToRead(FTPFile[] files) {
         System.out.println("List of all files");

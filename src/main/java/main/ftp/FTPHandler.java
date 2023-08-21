@@ -52,8 +52,8 @@ public class FTPHandler {
 
             while((output = reader.readLine()) != null) {
                 Output.printFileToRead(output);
-                closeConnection();
             }
+            closeConnection();
 
         } catch (IOException e) {
             e.printStackTrace();
