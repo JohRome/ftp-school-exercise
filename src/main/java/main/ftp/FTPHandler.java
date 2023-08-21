@@ -1,4 +1,4 @@
-package main;
+package main.ftp;
 
 import main.output.Output;
 import org.apache.commons.net.ftp.FTPClient;
