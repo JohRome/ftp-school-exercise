@@ -15,10 +15,9 @@ public class UserInput {
         while (true) {
             try {
                 userInput = Integer.parseInt(input.nextLine());
-                break; // Exit the loop if parsing is successful
+                break;
             } catch (NumberFormatException e) {
-                // Handle invalid input here, e.g., print an error message
-                System.out.print("Invalid input. Please enter an integer: ");
+                e.printStackTrace();
             }
         }
 

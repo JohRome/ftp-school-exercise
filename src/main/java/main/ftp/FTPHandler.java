@@ -6,10 +6,13 @@ import org.apache.commons.net.ftp.FTPFile;
 
 import java.io.*;
 public class FTPHandler {
+    //Set hostName, userName and userPassword to your personal login credentials
     private final String hostName = "127.0.0.1";
-    private final String userName = "";
-    private final String userPassword = "";
+    private final String userName = "SET_YOUR_USER_NAME_HERE";
+    private final String userPassword = "SET_YOUR_PASSWORD_HERE";
     private final String workingDirectory = "/upload/";
+    // Set the same path as in the FileManager class
+    private final String pathName = "SET\\YOUR\\OWN\\PATH\\HERE";
     private FTPClient ftpClient;
 
     public FTPHandler (FTPClient ftpClient) {
@@ -31,7 +34,7 @@ public class FTPHandler {
         connectToFTPServer();
 
         try {
-            File file = new File(fileToAdd);
+            File file = new File(pathName + fileToAdd);
             FileInputStream inputStream = new FileInputStream(file);
             ftpClient.storeFile(fileToAdd, inputStream);
             inputStream.close();
